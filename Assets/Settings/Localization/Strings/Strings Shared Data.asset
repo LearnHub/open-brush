@@ -3331,6 +3331,14 @@ MonoBehaviour:
     m_Key: BRUSH_SETTINGS_TRAY_BRUSH_SIZE
     m_Metadata:
       m_Items: []
+  - m_Id: 309472988126507008
+    m_Key: ADMIN_PANEL_QUIT_BUTTON_POPUP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 309475274739412992
+    m_Key: New Entry
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

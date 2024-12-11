@@ -3517,6 +3517,10 @@ MonoBehaviour:
     m_Localized: Plus d'informations sur l'utilisation d'Open Brush sans VR
     m_Metadata:
       m_Items: []
+  - m_Id: 309472988126507008
+    m_Localized: Sortie
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

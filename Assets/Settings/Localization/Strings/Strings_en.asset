@@ -3528,6 +3528,10 @@ MonoBehaviour:
     m_Localized: Brush Size
     m_Metadata:
       m_Items: []
+  - m_Id: 309472988126507008
+    m_Localized: Exit
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
