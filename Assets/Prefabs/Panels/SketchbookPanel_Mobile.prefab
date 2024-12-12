@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 1817641934749251187}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.839, y: -0.658, z: -0.0311}
+  m_LocalPosition: {x: -0.839, y: -0.978, z: -0.0311}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -196,6 +196,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: SketchbookPanel_Mobile
       objectReference: {fileID: 0}
+    - target: {fileID: 127584, guid: 11a71a8b70e19254abe00d5e569f428c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 155754, guid: 11a71a8b70e19254abe00d5e569f428c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 405018, guid: 11a71a8b70e19254abe00d5e569f428c, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -238,6 +246,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 405018, guid: 11a71a8b70e19254abe00d5e569f428c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010683355590, guid: 11a71a8b70e19254abe00d5e569f428c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011622452938, guid: 11a71a8b70e19254abe00d5e569f428c, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2478559423573741591, guid: 11a71a8b70e19254abe00d5e569f428c,
@@ -296,6 +312,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8644332587479430734, guid: bdb7d2ac05cca8346b210c2b576878cb,
         type: 3}
+    - target: {fileID: 8051552516459751659, guid: 11a71a8b70e19254abe00d5e569f428c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
