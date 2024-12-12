@@ -109,3 +109,6 @@ Packages/com.unity.xr.picoxr
 
 # Cache files
 *.cache
+
+# ClassVR Plugin
+/LocalPackages/ClassVR-Unity-Plugin
