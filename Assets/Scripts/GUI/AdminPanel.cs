@@ -93,7 +93,7 @@ namespace TiltBrush
                 m_AnimButtons[i].renderer.enabled = false;
             }
 
-            RefreshButtonsForAdvancedMode();
+            //RefreshButtonsForAdvancedMode();
             SetShareButtonNotifyActive(false);
 
             UpdateShareButtonText();
@@ -108,16 +108,16 @@ namespace TiltBrush
             BaseUpdate();
 
             // Update save buttons availability.
-            bool alreadySaved = SaveLoadScript.m_Instance.SceneFile.Valid &&
-                SaveLoadScript.m_Instance.CanOverwriteSource;
-            m_SaveNewButton.SetActive(!alreadySaved);
-            m_SaveOptionsButton.SetActive(alreadySaved);
+            //bool alreadySaved = SaveLoadScript.m_Instance.SceneFile.Valid &&
+            //    SaveLoadScript.m_Instance.CanOverwriteSource;
+            //m_SaveNewButton.SetActive(!alreadySaved);
+            //m_SaveOptionsButton.SetActive(alreadySaved);
         }
 
         override public void ForceUpdatePanelVisuals()
         {
             base.ForceUpdatePanelVisuals();
-            RefreshButtonsForAdvancedMode();
+            //RefreshButtonsForAdvancedMode();
         }
 
         override protected void UpdateGazeBehavior()
