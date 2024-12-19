@@ -35,7 +35,8 @@ namespace TiltBrush
     {
         None,
         Poly,
-        Sketchfab
+        Sketchfab,
+        ClassVR
     }
 
     [Serializable]
@@ -464,9 +465,13 @@ namespace TiltBrush
                     AudioManager.m_Instance.UploadLoop(true);
                     var timer = System.Diagnostics.Stopwatch.StartNew();
                     m_UploadTask = new TaskAndCts<(string url, long bytes)>();
-                    Debug.Assert(backend == Cloud.Sketchfab);
-                    m_UploadTask.Task = UploadCurrentSketchSketchfabAsync(m_UploadTask.Token, tempUploadDir.Value,
-                        isDemoUpload);
+                    //Debug.Assert(backend == Cloud.Sketchfab);
+                    //m_UploadTask.Task = UploadCurrentSketchSketchfabAsync(m_UploadTask.Token, tempUploadDir.Value,
+                    //    isDemoUpload);
+                    Debug.Assert(backend == Cloud.ClassVR);
+                    m_UploadTask.Task = UploadCurrentSketchClassVRAsync(m_UploadTask.Token, tempUploadDir.Value, isDemoUpload);
+
+
                     var (url, totalUploadLength) = await m_UploadTask.Task;
                     m_LastUploadCompleteUrl = url;
                     ControllerConsoleScript.m_Instance.AddNewLine("Upload succeeded!");
@@ -652,6 +657,38 @@ namespace TiltBrush
                     }
                 }
             }
+        }
+
+        private async Task<(string, long)> UploadCurrentSketchClassVRAsync(
+            CancellationToken token, string tempUploadDir, bool _)
+        {
+            DiskSceneFileInfo fileInfo = GetWritableFile();
+
+            SetUploadProgress(UploadStep.CreateGltf, 0);
+            // Do the glTF straight away as it relies on the meshes, not the stroke descriptions.
+            string gltfFile = Path.Combine(tempUploadDir, kGltfName);
+            var exportResults = await OverlayManager.m_Instance.RunInCompositorAsync(
+                OverlayType.Export, fadeDuration: 0.5f,
+                action: () => new ExportGlTF().ExportBrushStrokes(
+                    gltfFile,
+                    AxisConvention.kGltf2, binary: true, doExtras: false,
+                    includeLocalMediaContent: true, gltfVersion: 2,
+                    selfContained: true));
+            if (!exportResults.success)
+            {
+                throw new VrAssetServiceException("Internal error creating upload data.");
+            }
+
+            var uploadLength = new FileInfo(exportResults.exportedFiles[0]).Length;
+
+            var progress = new Progress<double>(d => SetUploadProgress(UploadStep.UploadElements, d));
+
+            var data = File.ReadAllBytes(exportResults.exportedFiles[0]);
+
+            var uri = await ClassVR.CloudFileHelper.UploadToSharedCloud(fileInfo.HumanName, "model/gltf+json", data, ClassVR.EndpointServer.Alpha);
+            Debug.LogFormat("AVN: upload uri = {0}", uri);
+
+            return (uri, uploadLength);
         }
 
         private async Task<(string, long)> UploadCurrentSketchSketchfabAsync(

@@ -59,8 +59,12 @@ namespace TiltBrush
         void UpdateShareButtonText()
         {
             // Skip redundant updates
-            bool currentLoggedIn = App.GoogleIdentity.LoggedIn || App.SketchfabIdentity.LoggedIn;
-            if (currentLoggedIn == m_UpdateShareButtonState) { return; }
+            //bool currentLoggedIn = App.GoogleIdentity.LoggedIn || App.SketchfabIdentity.LoggedIn;
+            //if (currentLoggedIn == m_UpdateShareButtonState) { return; }
+
+            //AVNTODO: check we've got ClassVR auth and can hit avnfs
+            var currentLoggedIn = true;
+
             m_UpdateShareButtonState = currentLoggedIn;
 
             string text = currentLoggedIn ? "" : m_ShareButtonLoggedOutExtraText.GetLocalizedStringAsync().Result;
