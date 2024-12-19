@@ -47,12 +47,12 @@ static class BuildTiltBrush
     // Types, consts, enums
 
     // The vendor name - used for the company name in builds and fbx output. Can have spaces.
-    public const string kDisplayVendorName = "Icosa Foundation";
+    public const string kDisplayVendorName = "Avantis";
     // The vendor name as the reverse DNS - used for naming mobile builds - shouldn't have spaces.
-    public const string kVendorReverseDNS = "foundation.icosa";
+    public const string kVendorReverseDNS = "avn.app";
 
     // Executable Base
-    public const string kGuiBuildExecutableName = "OpenBrush";
+    public const string kGuiBuildExecutableName = "XRBrush";
     // Windows Executable
     public const string kGuiBuildWindowsExecutableName = kGuiBuildExecutableName + ".exe";
     // Linux Executable
@@ -62,7 +62,16 @@ static class BuildTiltBrush
     // Android Application Identifier
     public static string GuiBuildAndroidApplicationIdentifier => $"{kVendorReverseDNS}.{kGuiBuildExecutableName}".ToLower();
     // Android Executable
-    public static string GuiBuildAndroidExecutableName => GuiBuildAndroidApplicationIdentifier + ".apk";
+    public static string GuiBuildAndroidExecutableName
+    {
+        get
+        {
+            var config = GameObject.Find("/App/Config").GetComponent<Config>();
+            return $"{kGuiBuildExecutableName}-{config.m_VersionNumber}".ToLower() +
+                (string.IsNullOrEmpty(config.m_BuildStamp) ? ".apk" : $".{config.m_BuildStamp}.apk".ToLower());
+        }
+    }
+
     public static string GuiBuildiOSApplicationIdentifier => $"{kVendorReverseDNS}.{kGuiBuildExecutableName}".ToLower();
 
     public class TiltBuildOptions
@@ -290,6 +299,7 @@ static class BuildTiltBrush
 
     public static TiltBuildOptions GetGuiOptions()
     {
+        var config = GameObject.Find("/App/Config").GetComponent<Config>();
         return new TiltBuildOptions
         {
             AutoProfile = GuiAutoProfile,
@@ -297,11 +307,10 @@ static class BuildTiltBrush
             Target = GuiSelectedBuildTarget,
             XrSdk = GuiSelectedSdk,
             Location = GetAppPathForGuiBuild(),
-            Stamp = "menuitem",
+            Stamp = config.m_BuildStamp,
             UnityOptions = GuiDevelopment
                 ? (BuildOptions.AllowDebugging | BuildOptions.Development | BuildOptions.CleanBuildCache)
                 : BuildOptions.None,
-            Description = "unity editor",
         };
     }
 
