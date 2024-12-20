@@ -685,7 +685,7 @@ namespace TiltBrush
 
             var data = File.ReadAllBytes(exportResults.exportedFiles[0]);
 
-            var uri = await ClassVR.CloudFileHelper.UploadToSharedCloud(fileInfo.HumanName, "model/gltf+json", data, ClassVR.EndpointServer.Alpha);
+            var uri = await ClassVR.CloudFileHelper.UploadToSharedCloud(fileInfo.HumanName, "model/gltf-binary", data, ClassVR.EndpointServer.Alpha);
 
             return (uri, uploadLength);
         }
