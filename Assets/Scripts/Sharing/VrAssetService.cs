@@ -683,9 +683,27 @@ namespace TiltBrush
 
             var progress = new Progress<double>(d => SetUploadProgress(UploadStep.UploadElements, d));
 
+            //AVNTODO: stream the file rather than read it all into memory
             var data = File.ReadAllBytes(exportResults.exportedFiles[0]);
 
-            var uri = await ClassVR.CloudFileHelper.UploadToSharedCloud(fileInfo.HumanName, "model/gltf-binary", data, ClassVR.EndpointServer.Alpha);
+            // Set the filename for upload to the device name and datetime so it's unique
+            var filename = $"{ClassVR.ClassVRProperties.Instance.DisplayName} {DateTime.Now:u}.glb";
+
+            var uri = await ClassVR.CloudFileHelper.UploadToSharedCloud(filename, "model/gltf-binary", data, ClassVR.EndpointServer.Alpha);
+
+            // If the file uploaded successfully, display a toast
+            if(!string.IsNullOrEmpty(uri))
+            {
+                var unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+                var activity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+
+                var toastClass = new AndroidJavaClass("android.widget.Toast");
+                activity.Call("runOnUiThread", new AndroidJavaRunnable(() =>
+                {
+                    var toastObject = toastClass.CallStatic<AndroidJavaObject>("makeText", activity, $"Uploaded '{filename}'", 1);
+                    toastObject.Call("show");
+                }));
+            }
 
             return (uri, uploadLength);
         }
