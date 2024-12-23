@@ -4531,12 +4531,13 @@ namespace TiltBrush
                 case GlobalCommands.UploadToGenericCloud:
                     {
                         Cloud cloud = (Cloud)iParam1;
-                        var ident = App.GetIdentity(cloud);
-                        if (!ident.LoggedIn)
-                        {
-                            ident.LoginAsync();
-                            break;
-                        }
+                        // ClassVR doesn't use OAuth for uploads
+                        //var ident = App.GetIdentity(cloud);
+                        //if (!ident.LoggedIn)
+                        //{
+                        //    ident.LoginAsync();
+                        //    break;
+                        //}
                         SelectionManager.m_Instance.ClearActiveSelection();
                         VrAssetService.m_Instance.UploadCurrentSketchAsync(cloud, isDemoUpload: false).AsAsyncVoid();
                         EatGazeObjectInput();

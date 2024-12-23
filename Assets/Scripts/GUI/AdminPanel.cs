@@ -59,8 +59,12 @@ namespace TiltBrush
         void UpdateShareButtonText()
         {
             // Skip redundant updates
-            bool currentLoggedIn = App.GoogleIdentity.LoggedIn || App.SketchfabIdentity.LoggedIn;
-            if (currentLoggedIn == m_UpdateShareButtonState) { return; }
+            //bool currentLoggedIn = App.GoogleIdentity.LoggedIn || App.SketchfabIdentity.LoggedIn;
+            //if (currentLoggedIn == m_UpdateShareButtonState) { return; }
+
+            //AVNTODO: check we've got ClassVR auth and can hit avnfs
+            var currentLoggedIn = true;
+
             m_UpdateShareButtonState = currentLoggedIn;
 
             string text = currentLoggedIn ? "" : m_ShareButtonLoggedOutExtraText.GetLocalizedStringAsync().Result;
@@ -93,7 +97,7 @@ namespace TiltBrush
                 m_AnimButtons[i].renderer.enabled = false;
             }
 
-            RefreshButtonsForAdvancedMode();
+            //RefreshButtonsForAdvancedMode();
             SetShareButtonNotifyActive(false);
 
             UpdateShareButtonText();
@@ -108,16 +112,16 @@ namespace TiltBrush
             BaseUpdate();
 
             // Update save buttons availability.
-            bool alreadySaved = SaveLoadScript.m_Instance.SceneFile.Valid &&
-                SaveLoadScript.m_Instance.CanOverwriteSource;
-            m_SaveNewButton.SetActive(!alreadySaved);
-            m_SaveOptionsButton.SetActive(alreadySaved);
+            //bool alreadySaved = SaveLoadScript.m_Instance.SceneFile.Valid &&
+            //    SaveLoadScript.m_Instance.CanOverwriteSource;
+            //m_SaveNewButton.SetActive(!alreadySaved);
+            //m_SaveOptionsButton.SetActive(alreadySaved);
         }
 
         override public void ForceUpdatePanelVisuals()
         {
             base.ForceUpdatePanelVisuals();
-            RefreshButtonsForAdvancedMode();
+            //RefreshButtonsForAdvancedMode();
         }
 
         override protected void UpdateGazeBehavior()

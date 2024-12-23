@@ -3470,6 +3470,10 @@ MonoBehaviour:
     m_Localized: "VR\u306A\u3057\u3067Open Brush\u3092\u4F7F\u7528\u3059\u308B\u65B9\u6CD5\u306B\u3064\u3044\u3066\u306E\u8A73\u7D30"
     m_Metadata:
       m_Items: []
+  - m_Id: 309472988126507008
+    m_Localized: "\u51FA\u53E3"
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

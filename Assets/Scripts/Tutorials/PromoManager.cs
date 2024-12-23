@@ -126,14 +126,14 @@ namespace TiltBrush
                 new IPromoFactory[]
                 {
                     new PromoFactory<BrushSizePromo>(PromoType.BrushSize, "BrushSize"),
-                    new PromoFactory<ShareSketchPromo>(PromoType.ShareSketch, "ShareSketch"),
+                    //new PromoFactory<ShareSketchPromo>(PromoType.ShareSketch, "ShareSketch"),
                     new PromoFactory<FloatingPanelPromo>(PromoType.FloatingPanel, "FloatingPanel"),
                     new PromoFactory<SelectionPromo>(PromoType.Selection, "Selection"),
                     new PromoFactory<DuplicatePromo>(PromoType.Duplicate, "Duplicate"),
                     new PromoFactory<InteractIntroPanelPromo>(PromoType.InteractIntroPanel, "InteractIntroPanel"),
-                    new PromoFactory<SaveIconPromo>(PromoType.SaveIcon, "SaveIcon"),
+                    //new PromoFactory<SaveIconPromo>(PromoType.SaveIcon, "SaveIcon"),
                     new PromoFactory<DeselectionPromo>(PromoType.Deselection, "Deselection"),
-                    new PromoFactory<AdvancedPanelsPromo>(PromoType.AdvancedPanels, "AdvancedPanels"),
+                    //new PromoFactory<AdvancedPanelsPromo>(PromoType.AdvancedPanels, "AdvancedPanels"),
                 }.ToDictionary(f => f.InstanceType);
 
             m_RequestedPromos = new HashSet<BasePromo>();
