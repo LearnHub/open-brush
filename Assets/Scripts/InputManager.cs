@@ -371,7 +371,9 @@ namespace TiltBrush
                 }
 
                 m_WandOnRight = value;
-                PlayerPrefs.SetInt(PLAYER_PREF_WAND_ON_RIGHT, WandOnRight ? 1 : 0);
+
+                // AVN: disable persisting this until we can identify the current user
+                //PlayerPrefs.SetInt(PLAYER_PREF_WAND_ON_RIGHT, WandOnRight ? 1 : 0);
 
                 var vrControllers = App.VrSdk.VrControls;
                 BaseControllerBehavior.SwapBehaviors(vrControllers.Wand, vrControllers.Brush);

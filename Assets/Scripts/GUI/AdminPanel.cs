@@ -201,6 +201,11 @@ namespace TiltBrush
             m_ShareButton_Notify.SetColor(col);
         }
 
+        public void HandleToggleHandedness()
+        {
+            SketchControlsScript.DoSwapControls();
+        }
+
         void SetShareButtonNotifyActive(bool active)
         {
             m_ShareButton.gameObject.SetActive(!active);
@@ -213,5 +218,7 @@ namespace TiltBrush
             m_MemoryWarningButton.SetActive(SketchMemoryScript.m_Instance.MemoryExceeded);
             m_MemoryWarning.GetComponent<Renderer>().material.SetColor("_Color", m_MemoryWarningColor);
         }
+
+
     }
 } // namespace TiltBrush
