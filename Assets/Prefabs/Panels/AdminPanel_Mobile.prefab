@@ -198,7 +198,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1151082384707834, guid: f5b291cbc819737469486452ea6748b8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1784932838058358, guid: f5b291cbc819737469486452ea6748b8, type: 3}
       propertyPath: m_IsActive
@@ -210,7 +210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1922662397484504, guid: f5b291cbc819737469486452ea6748b8, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1936268928807740, guid: f5b291cbc819737469486452ea6748b8, type: 3}
       propertyPath: m_IsActive
@@ -280,7 +280,7 @@ PrefabInstance:
     - target: {fileID: 114828844590133850, guid: f5b291cbc819737469486452ea6748b8,
         type: 3}
       propertyPath: m_AnimButtons.Array.size
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 114828844590133850, guid: f5b291cbc819737469486452ea6748b8,
         type: 3}
@@ -311,12 +311,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnimButtons.Array.data[6].button
       value: 
-      objectReference: {fileID: 3773416133596900997}
+      objectReference: {fileID: 1106436603341061803}
     - target: {fileID: 114828844590133850, guid: f5b291cbc819737469486452ea6748b8,
         type: 3}
       propertyPath: m_AnimButtons.Array.data[7].button
       value: 
-      objectReference: {fileID: 3773416133596900997}
+      objectReference: {fileID: 1100033417140650169}
     - target: {fileID: 114828844590133850, guid: f5b291cbc819737469486452ea6748b8,
         type: 3}
       propertyPath: m_AnimButtons.Array.data[8].button
@@ -390,6 +390,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1102079061916130391}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1100033417140650169 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4298548666588398, guid: f5b291cbc819737469486452ea6748b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1102079061916130391}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1100207154383084621 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4476673398456346, guid: f5b291cbc819737469486452ea6748b8,
@@ -399,6 +405,12 @@ Transform:
 --- !u!4 &1100498741878187981 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4115296977812378, guid: f5b291cbc819737469486452ea6748b8,
+    type: 3}
+  m_PrefabInstance: {fileID: 1102079061916130391}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1106436603341061803 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4931497879020284, guid: f5b291cbc819737469486452ea6748b8,
     type: 3}
   m_PrefabInstance: {fileID: 1102079061916130391}
   m_PrefabAsset: {fileID: 0}
