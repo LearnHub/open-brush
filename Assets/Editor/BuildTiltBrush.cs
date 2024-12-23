@@ -66,9 +66,7 @@ static class BuildTiltBrush
     {
         get
         {
-            var config = GameObject.Find("/App/Config").GetComponent<Config>();
-            return $"{kGuiBuildExecutableName}-{config.m_VersionNumber}".ToLower() +
-                (string.IsNullOrEmpty(config.m_BuildStamp) ? ".apk" : $".{config.m_BuildStamp}.apk".ToLower());
+            return $"{kGuiBuildExecutableName}-{GameObject.Find("/App/Config").GetComponent<Config>().m_VersionNumber}-{DateTime.UtcNow:yyyyMMddHHmm}.apk".ToLower();
         }
     }
 
@@ -348,7 +346,7 @@ static class BuildTiltBrush
             GuiRuntimeIl2cpp ? "_Il2cpp" : "",
             GuiAutoProfile ? "_AutoProfile" : "",
             kGuiBuildExecutableName);
-        var location = Path.GetDirectoryName(Path.GetDirectoryName(Application.dataPath));
+        var location = Path.GetDirectoryName(Application.dataPath);
 
         location = Path.Combine(Path.Combine(location, "Builds"), directoryName);
         switch (buildTarget)

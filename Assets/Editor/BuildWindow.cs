@@ -642,6 +642,12 @@ namespace TiltBrush
             // TODO: check correct plugins for XR mode
 
             m_currentBuildPath = BuildTiltBrush.GetAppPathForGuiBuild();
+            var buildDir = Path.GetDirectoryName(m_currentBuildPath);
+            var buildFiles = Directory.GetFiles(buildDir, "*.apk");
+            Array.Sort(buildFiles);
+            var exeName = buildFiles.Length > 0 ? Path.GetFileName(buildFiles[buildFiles.Length-1]) : "No build found";
+            m_currentBuildPath = Path.Combine(buildDir, exeName);
+
             if (File.Exists(m_currentBuildPath))
             {
                 m_currentBuildTime = File.GetLastWriteTime(m_currentBuildPath);
@@ -651,11 +657,10 @@ namespace TiltBrush
                 m_currentBuildTime = null;
             }
 
-            string exeName = Path.GetFileName(m_currentBuildPath);
+            //string exeName = Path.GetFileName(m_currentBuildPath);
             string exeTitle = Path.GetFileNameWithoutExtension(exeName);
 
-            // Note, we add "unityeditor" to the package name - Unity appends this.
-            string packageName = exeTitle;// + "unityeditor";
+            string packageName = BuildTiltBrush.GuiBuildAndroidApplicationIdentifier;
 
             if (m_upload != null)
             {
@@ -671,7 +676,7 @@ namespace TiltBrush
 
             if (m_launch != null) { m_launch.Cancel(); }
             m_launch = new AndroidOperation(
-                string.Format("Launch {0}", exeName),
+                string.Format("Launch {0}", packageName),
                 (results) => results.Any(x => x.Contains("Starting: Intent")),
                 // adb args:
                 "-s", m_selectedAndroid,
