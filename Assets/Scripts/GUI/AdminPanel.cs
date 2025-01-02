@@ -14,6 +14,7 @@
 
 using UnityEngine;
 using UnityEngine.Localization;
+using UnityEngine.SceneManagement;
 
 namespace TiltBrush
 {
@@ -204,6 +205,13 @@ namespace TiltBrush
         public void HandleToggleHandedness()
         {
             SketchControlsScript.DoSwapControls();
+        }
+
+        public void HandleResetTutorial()
+        {
+            // Set the key to 0 and restart the scene
+            PlayerPrefs.SetInt(App.kPlayerPrefHasPlayedBefore, 0);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         void SetShareButtonNotifyActive(bool active)

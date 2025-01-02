@@ -499,7 +499,8 @@ namespace TiltBrush
             Physics.autoSimulation = false;
 
             // See if this is the first time
-            HasPlayedBefore = PlayerPrefs.GetInt(kPlayerPrefHasPlayedBefore, 0) == 1;
+            // AVN: default the key to 1 so the tutorial only runs if the key has been explicitly set to 0
+            HasPlayedBefore = PlayerPrefs.GetInt(kPlayerPrefHasPlayedBefore, 1) == 1;
 
 #if ZAPBOX_SUPPORTED
             // TODO:Mikesky - fix zapbox support.
