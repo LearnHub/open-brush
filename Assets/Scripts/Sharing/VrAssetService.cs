@@ -476,7 +476,7 @@ namespace TiltBrush
                     m_LastUploadCompleteUrl = url;
                     ControllerConsoleScript.m_Instance.AddNewLine("Upload succeeded!");
                     AudioManager.m_Instance.PlayUploadCompleteSound(InputManager.Wand.Transform.position);
-                    PanelManager.m_Instance.GetAdminPanel().ActivatePromoBorder(true);
+                    //PanelManager.m_Instance.GetAdminPanel().ActivatePromoBorder(true);
                     // Don't auto-open the URL on mobile because it steals focus from the user.
                     if (!isDemoUpload && !App.Config.IsMobileHardware && m_LastUploadCompleteUrl != null)
                     {
