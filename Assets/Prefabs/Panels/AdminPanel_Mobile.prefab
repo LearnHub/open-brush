@@ -544,6 +544,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1841057133452878, guid: f5b291cbc819737469486452ea6748b8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1843451682130658, guid: f5b291cbc819737469486452ea6748b8, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -648,7 +652,12 @@ PrefabInstance:
     - target: {fileID: 114828844590133850, guid: f5b291cbc819737469486452ea6748b8,
         type: 3}
       propertyPath: m_AnimButtons.Array.size
-      value: 10
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 114828844590133850, guid: f5b291cbc819737469486452ea6748b8,
+        type: 3}
+      propertyPath: m_PanelPopUpMap.Array.size
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114828844590133850, guid: f5b291cbc819737469486452ea6748b8,
         type: 3}
@@ -659,37 +668,37 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnimButtons.Array.data[2].button
       value: 
-      objectReference: {fileID: 1106697165685606979}
+      objectReference: {fileID: 1106587038911457673}
     - target: {fileID: 114828844590133850, guid: f5b291cbc819737469486452ea6748b8,
         type: 3}
       propertyPath: m_AnimButtons.Array.data[3].button
       value: 
-      objectReference: {fileID: 1106587038911457673}
+      objectReference: {fileID: 1100207154383084621}
     - target: {fileID: 114828844590133850, guid: f5b291cbc819737469486452ea6748b8,
         type: 3}
       propertyPath: m_AnimButtons.Array.data[4].button
       value: 
-      objectReference: {fileID: 1100207154383084621}
+      objectReference: {fileID: 3773416133596900997}
     - target: {fileID: 114828844590133850, guid: f5b291cbc819737469486452ea6748b8,
         type: 3}
       propertyPath: m_AnimButtons.Array.data[5].button
       value: 
-      objectReference: {fileID: 3773416133596900997}
+      objectReference: {fileID: 1106436603341061803}
     - target: {fileID: 114828844590133850, guid: f5b291cbc819737469486452ea6748b8,
         type: 3}
       propertyPath: m_AnimButtons.Array.data[6].button
       value: 
-      objectReference: {fileID: 1106436603341061803}
+      objectReference: {fileID: 1100033417140650169}
     - target: {fileID: 114828844590133850, guid: f5b291cbc819737469486452ea6748b8,
         type: 3}
       propertyPath: m_AnimButtons.Array.data[7].button
       value: 
-      objectReference: {fileID: 1100033417140650169}
+      objectReference: {fileID: 2921340587782860111}
     - target: {fileID: 114828844590133850, guid: f5b291cbc819737469486452ea6748b8,
         type: 3}
       propertyPath: m_AnimButtons.Array.data[8].button
       value: 
-      objectReference: {fileID: 2921340587782860111}
+      objectReference: {fileID: 7167515839089873960}
     - target: {fileID: 114828844590133850, guid: f5b291cbc819737469486452ea6748b8,
         type: 3}
       propertyPath: m_AnimButtons.Array.data[9].button
@@ -805,12 +814,6 @@ Transform:
 --- !u!4 &1106587038911457673 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4569698380707294, guid: f5b291cbc819737469486452ea6748b8,
-    type: 3}
-  m_PrefabInstance: {fileID: 1102079061916130391}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &1106697165685606979 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4670881044846100, guid: f5b291cbc819737469486452ea6748b8,
     type: 3}
   m_PrefabInstance: {fileID: 1102079061916130391}
   m_PrefabAsset: {fileID: 0}

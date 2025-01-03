@@ -180,7 +180,7 @@ namespace TiltBrush
             {
                 if (uploadProgress >= 1.0f)
                 {
-                    ActivatePromoBorder(false);
+                    //ActivatePromoBorder(false);
                     SetShareButtonNotifyActive(true);
                 }
                 else
@@ -194,12 +194,12 @@ namespace TiltBrush
                 SetShareButtonNotifyActive(false);
             }
 
-            m_ShareButton.GetComponent<Renderer>().material.SetFloat("_Ratio", uploadProgress);
-            m_ShareButton_Notify.GetComponent<Renderer>().material.SetFloat("_Ratio", uploadProgress);
+            //m_ShareButton.GetComponent<Renderer>().material.SetFloat("_Ratio", uploadProgress);
+            //m_ShareButton_Notify.GetComponent<Renderer>().material.SetFloat("_Ratio", uploadProgress);
 
             Color col = GetGazeColor();
             m_ShareButton.SetColor(col);
-            m_ShareButton_Notify.SetColor(col);
+            //m_ShareButton_Notify.SetColor(col);
         }
 
         public void HandleToggleHandedness()
@@ -216,8 +216,9 @@ namespace TiltBrush
 
         void SetShareButtonNotifyActive(bool active)
         {
-            m_ShareButton.gameObject.SetActive(!active);
-            m_ShareButton_Notify.gameObject.SetActive(active);
+            // AVN: disable share notify button entirely
+            //m_ShareButton.gameObject.SetActive(!active);
+            //m_ShareButton_Notify.gameObject.SetActive(active);
         }
 
         void OnMemoryExceededChanged()

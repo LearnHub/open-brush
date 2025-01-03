@@ -87,8 +87,8 @@ namespace TiltBrush
             }
             if (m_LastUploadProgress != uploadProgress)
             {
-                SetShareNotification(uploadProgress >= 1);
-                m_ShareButton.GetComponent<Renderer>().material.SetFloat("_Ratio", uploadProgress);
+                //SetShareNotification(uploadProgress >= 1);
+                //m_ShareButton.GetComponent<Renderer>().material.SetFloat("_Ratio", uploadProgress);
                 m_LastUploadProgress = uploadProgress;
             }
         }
