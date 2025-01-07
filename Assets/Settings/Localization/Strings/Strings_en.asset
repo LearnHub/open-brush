@@ -3536,6 +3536,10 @@ MonoBehaviour:
     m_Localized: Run Tutorial And Restart
     m_Metadata:
       m_Items: []
+  - m_Id: 319937726516834304
+    m_Localized: Tutorial
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -1,0 +1,34 @@
+{
+    "name": "AVN Input",
+    "maps": [
+        {
+            "name": "Avantis",
+            "id": "a90eb0ab-131d-47b6-9c33-0930b493b7b2",
+            "actions": [
+                {
+                    "name": "Quit",
+                    "type": "Button",
+                    "id": "14078181-7911-4fb5-8640-37066ebbb9d4",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3d1b2fd2-80fb-465b-9cfe-b43202ded006",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Quit",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

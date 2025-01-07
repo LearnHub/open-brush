@@ -18,6 +18,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 namespace TiltBrush
 {
@@ -763,6 +764,13 @@ namespace TiltBrush
                 default:
                     break;
             }
+        }
+
+        public void HandleResetTutorial()
+        {
+            // Set the key to 0 and restart the scene
+            PlayerPrefs.SetInt(App.kPlayerPrefHasPlayedBefore, 0);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         private void OnSketchSetDirty()

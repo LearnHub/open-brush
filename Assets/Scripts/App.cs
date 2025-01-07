@@ -32,6 +32,8 @@ using ZipLibrary = Ionic.Zip;
 #else
 using ZipSubfileReader = TiltBrush.ZipSubfileReader_SharpZipLib;
 using ZipLibrary = ICSharpCode.SharpZipLib.Zip;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Utilities;
 #endif
 
 #if !UNITY_2020_3_OR_NEWER
@@ -284,6 +286,8 @@ namespace TiltBrush
         private DriveAccess m_DriveAccess;
         private DriveSync m_DriveSync;
         private GoogleUserSettings m_GoogleUserSettings;
+
+        private InputAction m_QuitAction;
 
         // ------------------------------------------------------------
         // Properties
@@ -604,6 +608,8 @@ namespace TiltBrush
 
         void Start()
         {
+            m_QuitAction = InputSystem.actions.FindAction("Quit");
+
             // Use of ControllerConsoleScript must wait until Start()
             ControllerConsoleScript.m_Instance.AddNewLine(GetStartupString());
 
@@ -811,6 +817,11 @@ namespace TiltBrush
                 m_SceneTransform.hasChanged = false;
             }
 #endif
+            // AVN: quit app on Android back button press (keyboard escape)
+            if(m_QuitAction.triggered)
+            {
+                Application.Quit();
+            }
 
             //look for state change
             if (m_CurrentAppState != m_DesiredAppState)
