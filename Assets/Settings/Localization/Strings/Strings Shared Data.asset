@@ -3343,6 +3343,10 @@ MonoBehaviour:
     m_Key: SKETCHBOOK_PANEL_BUTTON_TUTORIAL_DESCRIPTION
     m_Metadata:
       m_Items: []
+  - m_Id: 320645474665639936
+    m_Key: ADMIN_PANEL_BUTTON_NEW_SKETCH_DESCRIPTION
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

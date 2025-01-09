@@ -3521,6 +3521,10 @@ MonoBehaviour:
     m_Localized: Sortie
     m_Metadata:
       m_Items: []
+  - m_Id: 320645474665639936
+    m_Localized: Nouveau croquis
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []
