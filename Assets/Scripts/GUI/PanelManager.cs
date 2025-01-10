@@ -1005,7 +1005,7 @@ namespace TiltBrush
                 case RotateSnapState.Done:
                     if (App.VrSdk.AnalogIsStick(InputManager.ControllerName.Wand)
                         && bWandSnap
-                        && bWandRot
+                        //&& bWandRot  // AVN: this sometimes prevents panels from snapping when they should
                         && GazePanelsAreVisible()
                         && (m_PanelsMode == PanelMode.Standard))
                     {

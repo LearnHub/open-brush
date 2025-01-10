@@ -4959,6 +4959,9 @@ namespace TiltBrush
 
             App.PolyAssetCatalog.ClearLoadingQueue();
             App.PolyAssetCatalog.UnloadUnusedModels();
+
+            // AVN: Reset environment to default
+            SceneSettings.m_Instance.SetDesiredPreset(EnvironmentCatalog.m_Instance.DefaultEnvironment, skipFade: !fade);
         }
 
         private bool WorldIsReset(bool toSavedXf)

@@ -644,6 +644,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.225
       objectReference: {fileID: 0}
+    - target: {fileID: 114524679305128758, guid: f5b291cbc819737469486452ea6748b8,
+        type: 3}
+      propertyPath: m_DescriptionText
+      value: ADMIN_PANEL_BUTTON_NEW_SKETCH_DESCRIPTION
+      objectReference: {fileID: 0}
+    - target: {fileID: 114524679305128758, guid: f5b291cbc819737469486452ea6748b8,
+        type: 3}
+      propertyPath: m_LocalizedDescription.m_TableEntryReference.m_KeyId
+      value: 320645474665639936
+      objectReference: {fileID: 0}
     - target: {fileID: 114828844590133850, guid: f5b291cbc819737469486452ea6748b8,
         type: 3}
       propertyPath: m_PanelType
