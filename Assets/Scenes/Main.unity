@@ -3661,7 +3661,7 @@ MonoBehaviour:
   m_OdsFps: 30
   m_OdsOutputPath: 
   m_OdsOutputPrefix: 
-  m_VersionNumber: 0.4.0
+  m_VersionNumber: 0.4.1
   m_BuildStamp: 
   m_UseBatchedBrushes: 1
   m_EnableBatchMemoryOptimization: 1
