@@ -688,8 +688,9 @@ namespace TiltBrush
 
             // Set the filename for upload to the device name and datetime so it's unique
             var filename = $"{ClassVR.ClassVRProperties.Instance.DisplayName} {DateTime.Now:u}.glb";
+            var mediaType = "model/gltf-binary;origin=classcanvas";
 
-            var uri = await ClassVR.CloudFileHelper.UploadToSharedCloud(filename, "model/gltf-binary", data, ClassVR.EndpointServer.Alpha);
+            var uri = await ClassVR.CloudFileHelper.UploadToSharedCloud(filename, mediaType, data, ClassVR.EndpointServer.Alpha);
 
             // If the file uploaded successfully, display a toast
             if(!string.IsNullOrEmpty(uri))
